@@ -6,22 +6,18 @@ namespace Task_01
 	{
 		static void Main(string[] args)
 		{
-			Console.Write("Enter points count: ");
-			int count = int.Parse(Console.ReadLine());
-
-			var points = GetPointsFromUser(count); 
-
+			var points = GetRandomPoints(200);
 			var result = GrahamAlgorithm.GetConvexHull(points);
 
-			Console.WriteLine(PointsString(result, true));
-			Console.WriteLine("\n\n");
+            Console.WriteLine(PointsString(result, true));
+			Console.WriteLine();
 			Console.WriteLine(PointsString(points.Except(result)));
 		}
 
 		private static List<Point> GetPointsFromUser(int count)
 		{
 			List<Point> points = new();
-			for(int i = 0; i < count; i++)
+			for (int i = 0; i < count; i++)
 			{
 				try
 				{
@@ -35,10 +31,10 @@ namespace Task_01
 				}
 				catch
 				{
-                    Console.WriteLine("Incorrect format!\n\tThe correct one is \n\t\t\tx;y");
+					Console.WriteLine("Incorrect format!\n\tThe correct one is \n\t\t\tx;y");
 					i--;
-                }
-            }
+				}
+			}
 
 			return points;
 		}
