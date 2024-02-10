@@ -22,7 +22,7 @@ namespace Task_03
 				components.Add(subResult.Keys);
 			}
 
-			using (var stream = File.CreateText(@"..\..\..\..\Task_03\result.txt"))
+			using (var stream = File.CreateText(@"..\..\..\result.txt"))
 			{
 				foreach (var component in components)
 				{

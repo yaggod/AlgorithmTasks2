@@ -12,7 +12,7 @@ namespace Task_02
 			int startingNode = 0;
 			var result = WidthSearch.GetAllNodesDistances(graph, startingNode);
 
-			using(var stream = File.CreateText(@"..\..\..\..\Task_02\result.txt"))
+			using(var stream = File.CreateText(@"..\..\..\result.txt"))
 			{
 				foreach (int node in result.Keys)
 				{
