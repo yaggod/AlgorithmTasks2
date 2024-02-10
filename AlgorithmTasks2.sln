@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task_01", "Task_01\Task_01.csproj", "{A0B0DF9E-AD28-4951-9F65-290CBE957BC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task_01", "Task_01\Task_01.csproj", "{A0B0DF9E-AD28-4951-9F65-290CBE957BC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task_02", "Task_02\Task_02.csproj", "{69EE4E17-1182-425F-8B23-9C9AF590453A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task_02", "Task_02\Task_02.csproj", "{69EE4E17-1182-425F-8B23-9C9AF590453A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphParser", "GraphParser\GraphParser.csproj", "{15D1C735-4AEB-44BE-8B05-5797B57E9FA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task_03", "Task_03\Task_03.csproj", "{2FC7E197-9A0C-4CBF-96AD-246911F7C07A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{15D1C735-4AEB-44BE-8B05-5797B57E9FA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15D1C735-4AEB-44BE-8B05-5797B57E9FA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15D1C735-4AEB-44BE-8B05-5797B57E9FA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FC7E197-9A0C-4CBF-96AD-246911F7C07A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FC7E197-9A0C-4CBF-96AD-246911F7C07A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FC7E197-9A0C-4CBF-96AD-246911F7C07A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FC7E197-9A0C-4CBF-96AD-246911F7C07A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
