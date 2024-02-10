@@ -54,6 +54,14 @@ namespace GraphParser
             }
         }
 
+        public IEnumerable<int> GetAccessibleToTargetNodes(int target)
+        {
+            for(int i = 0; i < Size; i++)
+            {
+                if (_graphMatrix[i][target])
+                    yield return i;
+            }
+        }
         
         public override string ToString()
         {
