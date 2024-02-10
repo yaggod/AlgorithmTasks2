@@ -22,10 +22,15 @@ namespace Task_03
 				components.Add(subResult.Keys);
 			}
 
-			foreach(var component in components)
+			using (var stream = File.CreateText(@"..\..\..\..\Task_03\result.txt"))
 			{
-                Console.WriteLine(String.Join(" ", component));
-            }
+				foreach (var component in components)
+				{
+					string stringToWrite = $"There are component with items: [{String.Join("; ", component)}]";
+					stream.WriteLine(stringToWrite);
+					Console.WriteLine(stringToWrite);
+				}
+			}
 		}
 	}
 }
