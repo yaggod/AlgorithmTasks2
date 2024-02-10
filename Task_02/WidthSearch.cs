@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Task_02
 {
-	internal class WidthSearch
+	public class WidthSearch
 	{
 		public static Dictionary<int, int> GetAllNodesDistances(Graph graph, int startingNode)
 		{
