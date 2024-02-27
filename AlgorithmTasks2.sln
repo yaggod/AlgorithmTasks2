@@ -11,7 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphParser", "GraphParser\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task_03", "Task_03\Task_03.csproj", "{2FC7E197-9A0C-4CBF-96AD-246911F7C07A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task_04", "Task_04\Task_04.csproj", "{49B8B920-D2CE-4035-B929-918E5B3E6164}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task_04", "Task_04\Task_04.csproj", "{49B8B920-D2CE-4035-B929-918E5B3E6164}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task_05", "Task_05\Task_05.csproj", "{817CBDEA-F28D-48F7-ADB5-24A97F3220EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{49B8B920-D2CE-4035-B929-918E5B3E6164}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49B8B920-D2CE-4035-B929-918E5B3E6164}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49B8B920-D2CE-4035-B929-918E5B3E6164}.Release|Any CPU.Build.0 = Release|Any CPU
+		{817CBDEA-F28D-48F7-ADB5-24A97F3220EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{817CBDEA-F28D-48F7-ADB5-24A97F3220EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{817CBDEA-F28D-48F7-ADB5-24A97F3220EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{817CBDEA-F28D-48F7-ADB5-24A97F3220EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
