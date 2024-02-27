@@ -74,6 +74,16 @@ namespace GraphParser
             return stringBuilder.ToString();
         }
 	
+        public Graph GetInverted()
+        {
+            Graph result = new Graph(Size, IsIndirect);
+            for(int i = 0; i < Size; i++)
+                for(int j = 0; j < Size; j++)
+                    result.AddConnection(i, j, _graphMatrix[j][i]);
+
+
+            return result;
+        }
     
     }
 }
