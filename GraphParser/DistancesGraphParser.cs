@@ -23,8 +23,8 @@ namespace GraphParser
                 for (int j = 0; j < valueStrings.Length; j++)
                 {
                     int valueToSet = int.Parse(valueStrings[j]);
-
-                    graph.AddConnection(i, j, valueToSet);
+                    if(valueToSet != 0)
+                        graph.AddConnection(i, j, valueToSet);
                 }
             }
 

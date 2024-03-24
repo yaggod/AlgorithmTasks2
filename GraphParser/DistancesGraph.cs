@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -55,8 +56,25 @@ namespace GraphParser
             ConnectionData data = new ConnectionData(true, distance);
             _graphDistancesMatrix[from][to] = data;
             _graphDistancesMatrix[to][from] = data;
-
         }
+
+        public void AddConnection(Edge edge)
+        {
+            AddConnection(edge.FirstNode, edge.SecondNode, edge.Distance);
+        }
+
+        public void RemoveConnection(int from, int to)
+        {
+            ConnectionData data = default;
+            _graphDistancesMatrix[from][to] = data;
+            _graphDistancesMatrix[to][from] = data;
+        }
+        public void RemoveConnection(Edge edge)
+        {
+            RemoveConnection(edge.FirstNode, edge.SecondNode);
+        }
+
+
         public IEnumerable<Edge> GetAllEdges()
         {
             for (int i = 0; i < Size; i++)
@@ -67,6 +85,29 @@ namespace GraphParser
                         yield return new Edge(i, j, _graphDistancesMatrix[i][j].Distance);
                 }
             }
+        }
+
+        public IEnumerable<int> GetAccessibleNodes(int from)
+        {
+            for (int i = 0; i < Size; i++)
+            {
+                if (i == from)
+                    continue;
+
+                if (_graphDistancesMatrix[from][i].IsConnected)
+                    yield return i;
+            }
+        }
+
+        public override string ToString()
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            for (int i = 0; i < Size; i++)
+            {
+                stringBuilder.AppendLine(String.Join(" ", _graphDistancesMatrix[i].Select(value => value.IsConnected ? value.Distance.ToString() : "0" )));
+            }
+
+            return stringBuilder.ToString();
         }
     }
 }
