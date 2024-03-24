@@ -21,7 +21,18 @@ namespace GraphParser
             }
 
         }
-
+        public struct Edge
+        {
+            public int FirstNode { get; }
+            public int SecondNode { get; }
+            public int Distance { get; }
+            public Edge(int firstNode, int secondNode, int distance)
+            {
+                FirstNode = firstNode;
+                SecondNode = secondNode;
+                Distance = distance;
+            }
+        }
 
         public int Size
         {
@@ -46,6 +57,16 @@ namespace GraphParser
             _graphDistancesMatrix[to][from] = data;
 
         }
-
+        public IEnumerable<Edge> GetAllEdges()
+        {
+            for (int i = 0; i < Size; i++)
+            {
+                for(int j = i + 1; j < Size; j++)
+                {
+                    if (_graphDistancesMatrix[i][j].IsConnected)
+                        yield return new Edge(i, j, _graphDistancesMatrix[i][j].Distance);
+                }
+            }
+        }
     }
 }
