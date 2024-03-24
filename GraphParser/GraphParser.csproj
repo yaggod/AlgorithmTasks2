@@ -41,11 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DistancesGraph.cs" />
+    <Compile Include="DistancesGraphParser.cs" />
     <Compile Include="Graph.cs" />
     <Compile Include="GraphParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="distancesGraph.txt" />
     <Content Include="graph.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
