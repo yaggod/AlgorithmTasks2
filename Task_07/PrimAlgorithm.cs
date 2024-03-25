@@ -7,12 +7,10 @@ namespace Task_07
         internal static DistancesGraph GetMinimumSpanningTree(DistancesGraph originalGraph)
         {
             DistancesGraph result = new(originalGraph.Size);
-            HashSet<int> addedNodes = new();
-            List<DistancesGraph.Edge> edgesToHandle = new();
-            addedNodes.Add(0);
-            edgesToHandle.AddRange(originalGraph.GetAccessibleNodesEdges(0));
+            List<DistancesGraph.Edge> edgesToHandle = new(originalGraph.GetAccessibleNodesEdges(0));
+            int addedNodesCount = 1;
 
-            while(addedNodes.Count < originalGraph.Size)
+            while(addedNodesCount < originalGraph.Size)
             {
                 edgesToHandle.Sort((first, second) => first.Distance.CompareTo(second.Distance));
                 for (int i = 0; i < edgesToHandle.Count; i++)
@@ -25,7 +23,7 @@ namespace Task_07
                     
                     if (!result.ContainsCycles())
                     {
-                        addedNodes.Add(edge.SecondNode);
+                        addedNodesCount++;
                         edgesToHandle.AddRange(originalGraph.GetAccessibleNodesEdges(edge.SecondNode));
                         break;
                     }
