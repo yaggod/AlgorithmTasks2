@@ -99,7 +99,45 @@ namespace GraphParser
             }
         }
 
-        public override string ToString()
+        public bool ContainsCycles()
+        {
+            HashSet<int> visitedNodes = new HashSet<int>();
+
+            for (int i = 0; i < Size; i++)
+            {
+                if (visitedNodes.Contains(i))
+                    continue;
+
+                if (ContainsCycles(i, -1, visitedNodes))
+                    return true;
+            }
+
+            return false;
+        }
+
+        private bool ContainsCycles(int currentNode, int parentNode, HashSet<int> visitedNodes)
+        {
+            visitedNodes.Add(currentNode);
+            foreach (int node in GetAccessibleNodes(currentNode))
+            {
+                if (!visitedNodes.Contains(node))
+                {
+                    if (ContainsCycles(node, currentNode, visitedNodes))
+                        return true;
+                }
+                else if (node != parentNode)
+                    return true;
+            }
+
+            return false;
+        }
+
+    }
+
+
+
+
+    public override string ToString()
         {
             StringBuilder stringBuilder = new StringBuilder();
             for (int i = 0; i < Size; i++)

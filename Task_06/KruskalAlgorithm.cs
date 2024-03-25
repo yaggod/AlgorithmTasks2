@@ -34,7 +34,7 @@ namespace Task_06
 
         private static bool IsInvalidSpanningTreeEdges(DistancesGraph result)
         {
-            return DepthSearch.ContainsCycles(result);
+            return result.ContainsCycles();
         }
 
     }
