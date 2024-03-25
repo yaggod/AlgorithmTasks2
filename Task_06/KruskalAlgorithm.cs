@@ -22,7 +22,7 @@ namespace Task_06
                 DistancesGraph.Edge currentEdge = sortedEdges.ElementAt(currentEdgeIndex++);
                 result.AddConnection(currentEdge);
                 addedEdgesCount++;
-                if (IsInvalidSpanningTreeEdges(result))
+                if (result.ContainsCycles())
                 {
                     result.RemoveConnection(currentEdge);
                     addedEdgesCount--;
@@ -31,11 +31,5 @@ namespace Task_06
 
             return result;
         }
-
-        private static bool IsInvalidSpanningTreeEdges(DistancesGraph result)
-        {
-            return result.ContainsCycles();
-        }
-
     }
 }
