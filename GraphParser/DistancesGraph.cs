@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace GraphParser
 {
@@ -13,7 +11,7 @@ namespace GraphParser
 
         public struct ConnectionData
         {
-            public bool IsConnected {get; }
+            public bool IsConnected { get; }
             public int Distance { get; }
             public ConnectionData(bool isConnected, int distance)
             {
@@ -79,7 +77,7 @@ namespace GraphParser
         {
             for (int i = 0; i < Size; i++)
             {
-                for(int j = i + 1; j < Size; j++)
+                for (int j = i + 1; j < Size; j++)
                 {
                     if (_graphDistancesMatrix[i][j].IsConnected)
                         yield return new Edge(i, j, _graphDistancesMatrix[i][j].Distance);
@@ -144,16 +142,24 @@ namespace GraphParser
             return false;
         }
 
-    
-    public override string ToString()
+
+        public override string ToString()
         {
             StringBuilder stringBuilder = new StringBuilder();
             for (int i = 0; i < Size; i++)
             {
-                stringBuilder.AppendLine(String.Join(" ", _graphDistancesMatrix[i].Select(value => value.IsConnected ? value.Distance.ToString() : "0" )));
+                stringBuilder.AppendLine(String.Join(" ", _graphDistancesMatrix[i].Select(value => value.IsConnected ? value.Distance.ToString() : "0")));
             }
 
             return stringBuilder.ToString();
+        }
+
+        public bool ContainsEdge(Edge edge)
+        {
+            int first = edge.FirstNode;
+            int second = edge.SecondNode;
+
+            return (_graphDistancesMatrix[first][second].IsConnected);
         }
     }
 }
