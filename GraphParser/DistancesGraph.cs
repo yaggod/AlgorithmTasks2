@@ -99,6 +99,18 @@ namespace GraphParser
             }
         }
 
+        public IEnumerable<Edge> GetAccessibleNodesEdges(int from)
+        {
+            for (int i = 0; i < Size; i++)
+            {
+                if (i == from)
+                    continue;
+
+                if (_graphDistancesMatrix[from][i].IsConnected)
+                    yield return new Edge(from, i, _graphDistancesMatrix[from][i].Distance);
+            }
+        }
+
         public bool ContainsCycles()
         {
             HashSet<int> visitedNodes = new HashSet<int>();
@@ -132,11 +144,7 @@ namespace GraphParser
             return false;
         }
 
-    }
-
-
-
-
+    
     public override string ToString()
         {
             StringBuilder stringBuilder = new StringBuilder();
