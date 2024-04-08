@@ -143,6 +143,19 @@ namespace GraphParser
         }
 
 
+        public bool ContainsEdge(Edge edge)
+        {
+            int first = edge.FirstNode;
+            int second = edge.SecondNode;
+
+            return (_graphDistancesMatrix[first][second].IsConnected);
+        }
+
+        public ConnectionData GetConnection(int from, int to)
+        {
+            return _graphDistancesMatrix[from][to];
+        }
+
         public override string ToString()
         {
             StringBuilder stringBuilder = new StringBuilder();
@@ -152,14 +165,6 @@ namespace GraphParser
             }
 
             return stringBuilder.ToString();
-        }
-
-        public bool ContainsEdge(Edge edge)
-        {
-            int first = edge.FirstNode;
-            int second = edge.SecondNode;
-
-            return (_graphDistancesMatrix[first][second].IsConnected);
         }
     }
 }
