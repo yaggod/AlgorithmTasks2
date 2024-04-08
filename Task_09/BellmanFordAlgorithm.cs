@@ -15,7 +15,6 @@ namespace Task_09
                 throw new ArgumentOutOfRangeException(nameof(originNode));
 
             float[] knownDistances = new float[graph.Size];
-            HashSet<int> visitedNodes = new HashSet<int>();
             for (int i = 0; i < graph.Size; i++)
                 knownDistances[i] = (i == originNode) ? 0 : float.PositiveInfinity;
 
