@@ -14,6 +14,9 @@ namespace Task_08
             for (int i = 0; i < graph.Size; i++)
                 knownDistances[i] = (i == startingNode) ? 0 : float.PositiveInfinity;
 
+            var allAccessibleNodes = Enumerable.Range(0, graph.Size).Select(node => graph.GetAccessibleNodes(node)).ToArray();
+
+
             for (int i = 0; i < knownDistances.Length; i++)
             {
                 int currentNode  = GetClosestNode(knownDistances, visitedNodes);
@@ -21,7 +24,7 @@ namespace Task_08
 
                 visitedNodes.Add(currentNode);
 
-                IEnumerable<int> accessibleNodes = graph.GetAccessibleNodes(currentNode);
+                IEnumerable<int> accessibleNodes = allAccessibleNodes[currentNode];
                 foreach (int nodeToHandle in accessibleNodes)
                 {
                     int distanceToHandledNode = graph.GetConnection(currentNode, nodeToHandle).Distance;

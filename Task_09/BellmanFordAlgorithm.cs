@@ -19,11 +19,12 @@ namespace Task_09
             for (int i = 0; i < graph.Size; i++)
                 knownDistances[i] = (i == originNode) ? 0 : float.PositiveInfinity;
 
+            var allAccessibleNodes = Enumerable.Range(0, graph.Size).Select(node => graph.GetAccessibleNodes(node)).ToArray();
 
             for(int i = 0; i < graph.Size; i ++)
                 for(int startingNode = 0; startingNode < graph.Size; startingNode++)
                 {
-                    IEnumerable<int> accessibleNodes = graph.GetAccessibleNodes(startingNode);
+                    IEnumerable<int> accessibleNodes = allAccessibleNodes[startingNode];
                     foreach(int endingNode in accessibleNodes)
                     {
                         int distance = graph.GetConnection(startingNode, endingNode).Distance;
