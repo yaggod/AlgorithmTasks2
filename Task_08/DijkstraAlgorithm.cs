@@ -16,18 +16,11 @@ namespace Task_08
 
             for (int i = 0; i < knownDistances.Length; i++)
             {
-                int currentNode = 0;
-                float distanceToTheCurrentNode = float.PositiveInfinity;
-                for (int j = 0; j < knownDistances.Length; j++)
-                {
-                    if (knownDistances[j] > distanceToTheCurrentNode || visitedNodes.Contains(j))
-                        continue;
+                int currentNode  = GetClosestNode(knownDistances, visitedNodes);
+                float distanceToTheCurrentNode = knownDistances[currentNode];
 
-                    currentNode = j;
-                    distanceToTheCurrentNode = knownDistances[j];
-
-                }
                 visitedNodes.Add(currentNode);
+
                 IEnumerable<int> accessibleNodes = graph.GetAccessibleNodes(currentNode);
                 foreach (int nodeToHandle in accessibleNodes)
                 {
@@ -37,6 +30,22 @@ namespace Task_08
             }
 
             return knownDistances;
+        }
+
+        private static int GetClosestNode(float[] knownDistances, HashSet<int> visitedNodes)
+        {
+            int closestNode = 0;
+            float distanceToTheCurrentNode = float.PositiveInfinity;
+            for (int j = 0; j < knownDistances.Length; j++)
+            {
+                if (knownDistances[j] > distanceToTheCurrentNode || visitedNodes.Contains(j))
+                    continue;
+
+                closestNode = j;
+                distanceToTheCurrentNode = knownDistances[j];
+            }
+
+            return closestNode;
         }
     }
 }
