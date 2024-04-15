@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            string text = "AABAACAADAABAAABAA";
+
+            string text = File.ReadAllText((@"..\..\..\input.txt"));
             string pattern = "AABA";
             var result = FiniteAutomataSearch.FindAllOccurances(text, pattern);
             Console.WriteLine(String.Join(" ", result));
