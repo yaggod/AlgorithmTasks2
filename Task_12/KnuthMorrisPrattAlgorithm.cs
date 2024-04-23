@@ -11,7 +11,12 @@ namespace Task_12
         public static List<int> FindAllOccurances(string text, string pattern)
         {
             List<int> result = new();
-
+            int[] prefixes = PrefixFunction($"{pattern}\u0000{text}");
+            for(int i = 1; i < text.Length; i++) // there is always one extra character in the prefix string anyways
+            {
+                if (prefixes[i + pattern.Length] == pattern.Length)
+                    result.Add(i - pattern.Length);
+            }
 
             return result;
         }
