@@ -8,10 +8,11 @@ namespace Task_12
 {
     internal class KnuthMorrisPrattAlgorithm
     {
+        private const char SEPARATOR = '\u0000';
         public static List<int> FindAllOccurances(string text, string pattern)
         {
             List<int> result = new();
-            int[] prefixes = PrefixFunction($"{pattern}\u0000{text}");
+            int[] prefixes = PrefixFunction(pattern + SEPARATOR + text);
             for(int i = 1; i < text.Length; i++) // there is always one extra character in the prefix string anyways
             {
                 if (prefixes[i + pattern.Length] == pattern.Length)
