@@ -12,10 +12,11 @@ namespace Task_12
         {
             List<int> result = new();
 
+
             return result;
         }
 
-        public static int[] PrefixFunction(string text)
+        private static int[] PrefixFunction(string text)
         {
             int[] result = new int[text.Length];
             for(int i = 1; i < result.Length; i++)

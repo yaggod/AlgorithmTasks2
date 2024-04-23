@@ -9,8 +9,7 @@ namespace Task_11
 
             string text = File.ReadAllText((@"..\..\..\input.txt"));
             string pattern = "AABA";
-            //var result = KnuthMorrisPrattAlgorithm.FindAllOccurances(text, pattern);
-            var result = KnuthMorrisPrattAlgorithm.PrefixFunction("abcabcd");
+            var result = KnuthMorrisPrattAlgorithm.FindAllOccurances(text, pattern);
 			Console.WriteLine(String.Join(" ", result));
         }
     }
