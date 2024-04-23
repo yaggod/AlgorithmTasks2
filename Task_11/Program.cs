@@ -7,7 +7,7 @@
 
             string text = File.ReadAllText((@"..\..\..\input.txt"));
             string pattern = "AABA";
-            var result = FiniteAutomataSearch.FindAllOccurances(text, pattern);
+            var result = FiniteAutomataSearch.FindAllOccurrences(text, pattern);
             Console.WriteLine(String.Join(" ", result));
         }
     }

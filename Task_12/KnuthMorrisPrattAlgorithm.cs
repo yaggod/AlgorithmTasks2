@@ -9,7 +9,7 @@ namespace Task_12
     internal class KnuthMorrisPrattAlgorithm
     {
         private const char SEPARATOR = '\u0000';
-        public static List<int> FindAllOccurances(string text, string pattern)
+        public static List<int> FindAllOccurrences(string text, string pattern)
         {
             List<int> result = new();
             int[] prefixes = PrefixFunction(pattern + SEPARATOR + text);

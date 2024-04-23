@@ -9,7 +9,7 @@ namespace Task_11
 {
     internal class FiniteAutomataSearch
     {
-        public static List<int> FindAllOccurances(string data, string pattern)
+        public static List<int> FindAllOccurrences(string data, string pattern)
         {
             List<int> result = new();
             int totalStatesCount = pattern.Length;
