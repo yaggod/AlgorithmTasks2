@@ -1,10 +1,16 @@
-﻿namespace Task_14
+﻿using Task_14;
+
+namespace Task_13
 {
 	internal class Program
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello, World!");
+
+			string text = File.ReadAllText((@"..\..\..\input.txt"));
+			string pattern = "AABA";
+			var result = RabinsAlgorithm.FindAllOccurrences(text, pattern);
+			
 		}
 	}
 }

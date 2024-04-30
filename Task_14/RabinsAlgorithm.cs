@@ -8,6 +8,12 @@ namespace Task_14
 {
 	internal class RabinsAlgorithm
 	{
+		internal static List<int> FindAllOccurrences(string text, string pattern)
+		{
+			List<int> result = new();
 
+
+			return result;
+		}
 	}
 }
