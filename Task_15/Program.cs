@@ -6,7 +6,7 @@ namespace Task_15
 	{
 		static void Main(string[] args)
 		{
-            Graph graph = GraphParser.GraphParser.GetFromFile(@"..\..\..\..\GraphParser\graph1.txt");
+            Graph graph = GraphParser.GraphParser.GetFromFile(@"..\..\..\..\GraphParser\graph.txt");
 			var result = GraphColorizer.Colorize(graph);
 			
 		}
