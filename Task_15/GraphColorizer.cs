@@ -16,7 +16,7 @@ namespace Task_15
 					foreach (int secondNode in graph.GetAccessibleNodes(currentNode))
 						if (graphColors[secondNode] == color)
 							isCorrectNode = false;
-					if (!isCorrectNode)
+					if (isCorrectNode)
 					{
 						graphColors[currentNode] = color;
 						break;
