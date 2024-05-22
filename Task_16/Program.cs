@@ -15,7 +15,7 @@ namespace Task_16
 				items.Add(new BackpackItem(weight, price));
 			}
 
-			BackpackProblemSolver.GetOptimalItemsForBackpack(items, 30);
+			var result = BackpackProblemSolver.GetMaximumTotalPrice(items, 30);
 			
 		}
 	}

@@ -11,7 +11,10 @@
 				for (int s = 1; s <= maxWeight; s++)
 				{
 					if (items.ElementAt(k - 1).Weight <= s)
-						maxPrices[k, s] = Math.Max(maxPrices[k - 1, s], maxPrices[k - 1, s - items.ElementAt(k - 1).Weight] + items.ElementAt(k - 1).Price);
+					{
+						int priceWithNewItem = maxPrices[k - 1, s - items.ElementAt(k - 1).Weight] + items.ElementAt(k - 1).Price;
+						maxPrices[k, s] = Math.Max(maxPrices[k - 1, s], priceWithNewItem);
+					}
 					else
 						maxPrices[k, s] = maxPrices[k - 1, s];
 				}
